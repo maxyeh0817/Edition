@@ -1,0 +1,17 @@
+@media (max-width: 768px) {
+  #services img {
+    margin-top: -18px !important;
+  }
+}
+
+#mainNav {
+  background-color: rgba(255,255,255,0);
+  transition: all .2s;
+  font-family: "Open Sans","Helvetica Neue",Arial,sans-serif;
+}
+
+#mainNav.navbar-shrink {
+  border-bottom: 1px solid rgba(33, 37, 41, .1);
+  background-color: #000000;
+}
+

@@ -16,7 +16,10 @@
 
 @media (max-width:767px) {
   .simple-slider .swiper-slide {
-    height: 360px;
+    height: 56vw!important;
+    width: 100vw!important;
+    max-width: 100vw!important;
+    max-height: 100vw!important;
   }
 }
 
