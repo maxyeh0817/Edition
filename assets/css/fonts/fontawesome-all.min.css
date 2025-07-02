@@ -5851,3 +5851,13 @@
   font-weight: 900;
 }
 
+@media (max-width: 500px) {
+  ..responsive_picture_news1 {
+    width: 90%;
+    height: auto;
+    display: block;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
