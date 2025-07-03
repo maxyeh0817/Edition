@@ -2946,7 +2946,7 @@ body {
 }
 
 .responsive_picture_news {
-  width: 80%;
+  width: 100%;
   height: auto;
   display: grid;
   place-items: center;
