@@ -1,3 +1,6 @@
+/* Import Noto Sans TC font */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&display=swap');
+
 @media (max-width: 768px) {
   #services img {
     margin-top: -18px !important;
@@ -7,7 +10,7 @@
 #mainNav {
   background-color: rgb(0,0,0);
   transition: all .2s;
-  font-family: "Open Sans","Helvetica Neue",Arial,sans-serif;
+  font-family: "Noto Sans TC", "Open Sans","Helvetica Neue",Arial,sans-serif;
 }
 
 #mainNav.navbar-shrink {
@@ -36,6 +39,7 @@ html, body {
   height: 100%;
   margin: 0;
   padding: 0;
+  font-family: "Noto Sans TC", "Open Sans","Helvetica Neue",Arial,sans-serif !important;
 }
 
 body {
@@ -68,5 +72,329 @@ body {
   flex-direction: column;
   min-height: 100vh;
   padding-top: 100px;
+  background-color: #000000;
+  color: #ffffff;
+}
+
+/* Force all text to render as white across the site */
+:root {
+  --bs-body-color: #ffffff;
+  --bs-body-color-rgb: 255, 255, 255;
+  --bs-heading-color: #ffffff;
+  /* Accent color setup */
+  --accent-600: #3a5eff; /* brand */
+  --accent-500: #5c76ff;
+  --accent-400: #7f93ff;
+  --accent-300: #a6b2ff;
+  --accent-200: #c8d0ff;
+  --accent-100: #e7ebff;
+  --accent-color: var(--accent-600);
+  --accent-color-rgb: 58, 94, 255;
+  --accent-color-hover: #2c46d6;
+  --bs-primary: var(--accent-color);
+  --bs-primary-rgb: var(--accent-color-rgb);
+  /* Default link colors use light accent; hover deepens */
+  --bs-link-color: var(--accent-300);
+  --bs-link-hover-color: var(--accent-600);
+}
+
+html, body {
+  color: #ffffff !important;
+}
+
+/* Inherit white color for all elements and pseudo-elements */
+*, *::before, *::after {
+  color: inherit !important;
+  font-family: "Noto Sans TC", "Open Sans","Helvetica Neue",Arial,sans-serif !important;
+}
+
+/* Explicitly cover common text-bearing elements */
+h1, h2, h3, h4, h5, h6,
+p, span, a, li, ol, ul,
+small, strong, em, label,
+dt, dd, blockquote, figcaption,
+table, th, td, caption {
+  color: #ffffff !important;
+}
+
+/* Nav links remain white on dark nav */
+.navbar .nav-link, .dropdown-item {
+  color: #ffffff !important;
+}
+
+/* General links use lighter brand accent */
+a {
+  color: var(--accent-300) !important;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+a:hover, a:focus, a:active {
+  color: var(--accent-600) !important;
+  text-decoration-color: var(--accent-600);
+}
+
+/* Override Bootstrap utility classes that might set non-white text */
+.text-muted, .text-body, .text-dark, .text-secondary,
+.text-black, .text-black-50, .text-body-emphasis {
+  color: #ffffff !important;
+}
+
+/* Special handling for text-muted in sections with white/light backgrounds */
+section#services .text-muted,
+.service-box .text-muted {
+  color: #000000 !important;
+}
+
+/* Primary buttons default to outline (lighter feel) */
+.btn-primary {
+  background-color: transparent !important;
+  border: 1px solid var(--accent-color) !important;
+  color: var(--accent-color) !important;
+}
+
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active {
+  background-color: var(--accent-color) !important;
+  border-color: var(--accent-color) !important;
+  color: #ffffff !important;
+}
+
+/* Outline primary buttons */
+.btn-outline-primary {
+  color: var(--accent-color) !important;
+  border-color: var(--accent-color) !important;
+}
+
+.btn-outline-primary:hover,
+.btn-outline-primary:focus,
+.btn-outline-primary:active {
+  background-color: var(--accent-color) !important;
+  border-color: var(--accent-color) !important;
+  color: #ffffff !important;
+}
+
+/* Section heading accent underline */
+.section-heading {
+  position: relative;
+}
+
+.section-heading::after {
+  content: "";
+  display: block;
+  width: 72px;
+  height: 3px;
+  margin-top: 0.5rem;
+  background: var(--accent-600);
+  border-radius: 2px;
+}
+
+/* Use accent color for specific highlight titles */
+.newsblock-title-under {
+  color: var(--accent-600) !important;
+}
+
+/* Subtle brand chips/badges (if used) */
+.badge-accent, .chip-accent {
+  background: rgba(58, 94, 255, 0.10);
+  border: 1px solid rgba(58, 94, 255, 0.24);
+  color: #ffffff;
+  border-radius: 999px;
+  padding: 0.25rem 0.5rem;
+}
+
+/* Fix card content layout for collaboration page */
+.fixed-card-content {
+  width: auto !important;
+  height: auto !important;
+  min-height: 250px;
+  overflow: visible !important;
+  display: flex;
+  flex-direction: column;
+}
+
+.card {
+  background-color: #1a1a1a !important;
+  border: 1px solid #333 !important;
+  border-radius: 8px;
+  height: 100%;
+}
+
+.card-body {
+  padding: 1.5rem !important;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.card-title {
+  color: #ffffff !important;
+  margin-bottom: 1rem;
+}
+
+.card-text {
+  color: #ffffff !important;
+  line-height: 1.6;
+  margin-bottom: 0.75rem;
+  flex-grow: 1;
+}
+
+.text-primary {
+  color: var(--accent-color) !important;
+}
+
+@media (max-width: 768px) {
+  .fixed-card-content {
+    min-height: 300px;
+  }
+}
+
+/* Fix Swiper navigation buttons to use proper arrow symbols */
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  font-family: swiper-icons !important;
+  font-size: 24px !important;
+  font-weight: 900 !important;
+}
+
+.swiper-button-next::after {
+  content: '→' !important;
+}
+
+.swiper-button-prev::after {
+  content: '←' !important;
+}
+
+/* Alternative using Unicode arrows if swiper-icons don't work */
+.simple-slider .swiper-button-next::after {
+  content: '›' !important;
+  font-family: Arial, sans-serif !important;
+  font-size: 28px !important;
+  font-weight: bold !important;
+}
+
+.simple-slider .swiper-button-prev::after {
+  content: '‹' !important;
+  font-family: Arial, sans-serif !important;
+  font-size: 28px !important;
+  font-weight: bold !important;
+}
+
+/* Change footer background to blue and reduce height */
+footer.bg-dark {
+  background-color: #3a5eff !important;
+  padding-top: 1rem !important;
+  padding-bottom: 1rem !important;
+}
+
+footer {
+  background-color: #3a5eff !important;
+  padding-top: 1rem !important;
+  padding-bottom: 1rem !important;
+}
+
+/* Reduce footer container padding */
+footer .container {
+  padding-top: 0.5rem !important;
+  padding-bottom: 0.5rem !important;
+}
+
+/* Service card hover effect */
+.service-card {
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.service-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3) !important;
+}
+
+/* Add smooth scaling effect for service card content */
+.service-card:hover h3 {
+  transform: scale(1.05);
+  transition: transform 0.3s ease-in-out;
+}
+
+.service-card h3 {
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Client card hover effect */
+.client-card {
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.client-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25) !important;
+}
+
+/* Add smooth scaling effect for client card image */
+.client-card:hover .card-img-top {
+  transform: scale(1.03);
+  transition: transform 0.3s ease-in-out;
+}
+
+.client-card .card-img-top {
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Add title animation for client cards */
+.client-card:hover .card-title {
+  color: var(--accent-color) !important;
+  transform: scale(1.02);
+  transition: all 0.3s ease-in-out;
+}
+
+.client-card .card-title {
+  transition: all 0.3s ease-in-out;
+}
+
+/* Tech card hover effect for homepage */
+.tech-card {
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+  padding: 1rem;
+  border-radius: 10px;
+}
+
+.tech-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 40px rgba(58, 94, 255, 0.15);
+  background-color: rgba(58, 94, 255, 0.05);
+}
+
+/* Add smooth scaling effect for tech card image */
+.tech-card:hover img {
+  transform: scale(1.1) rotate(5deg);
+  transition: transform 0.4s ease-in-out;
+}
+
+.tech-card img {
+  transition: transform 0.4s ease-in-out;
+}
+
+/* Add animation for tech card title */
+.tech-card:hover h3 {
+  color: var(--accent-color) !important;
+  transform: scale(1.05);
+  transition: all 0.3s ease-in-out;
+}
+
+.tech-card h3 {
+  transition: all 0.3s ease-in-out;
+}
+
+/* Add subtle glow effect */
+.tech-card:hover .service-box {
+  transform: translateY(-5px);
+  transition: transform 0.3s ease-in-out;
+}
+
+.tech-card .service-box {
+  transition: transform 0.3s ease-in-out;
 }
 
